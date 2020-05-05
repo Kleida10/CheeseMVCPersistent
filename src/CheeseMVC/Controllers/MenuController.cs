@@ -95,7 +95,7 @@ namespace CheeseMVC.Controllers
                         Menu = context.Menus.Single(c => c.ID == addMenuItemViewModel.MenuID),
                         Cheese = context.Cheeses.Single(c => c.ID == addMenuItemViewModel.CheeseID)
                     };
-                    existingItems.Add(newCheeseMenu);
+                    context.CheeseMenus.Add(newCheeseMenu);
                     context.SaveChanges();
                    return Redirect("/Menu/ViewMenu/" + newCheeseMenu.MenuID);
                  }
